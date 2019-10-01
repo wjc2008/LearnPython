@@ -7,3 +7,5 @@ s_b = input("请再输入一个数：")
 b = int(s_b)
 c = a ** b
 print(c)
+print("安装git.exe成功")
+print("能自动保存吗？看看吧")
