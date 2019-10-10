@@ -9,7 +9,12 @@ from pygame.math import *  #这行代码替代之前2.x版本的from gameobjects
 from math import *
  
 pygame.init()
- 
+'''
+我们已经知道python有一个特殊的“工具包（模块）”叫pygame了。
+在我们要动手用它完成我们的想法之前，电脑这个强迫症需要我们检查一遍
+，这个工具包是否完整，能否正常给我们提供帮助。
+而这个检查的动作，就是pygame.init()
+'''
 screen = pygame.display.set_mode((640, 480), 0, 32)
  
 background = pygame.image.load(background_image_filename).convert()
