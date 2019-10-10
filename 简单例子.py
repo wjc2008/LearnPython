@@ -31,7 +31,7 @@ while True:
 pygame.quit()
 
 '''
-
+'''
 import sys
 import pygame
 
@@ -46,3 +46,17 @@ while True:
             sys.exit()
 
 pygame.quit()
+'''
+import pygame
+import sys
+pygame.init()
+size = width,height = 248,248
+screen = pygame.display.set_mode(size)
+
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            sys.exit()
+
+pygame.quit()
+
