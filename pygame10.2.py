@@ -4,7 +4,8 @@ sprite_image_filename = 'fugu.png'
 import pygame
 from pygame.locals import *
 from sys import exit
-from pygame.math import *
+from pygame.math import *  #这行代码替代之前2.x版本的from gameobjects.vector2 import vector2
+#上行代码中已包含Vector2 Vector3,需要注意啊
 from math import *
  
 pygame.init()
