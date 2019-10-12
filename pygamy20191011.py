@@ -1,5 +1,6 @@
 #写一个你好世界的小例子，用两张图片
 import pygame
+import time
 
 from pygame.locals import *
 from sys import exit
@@ -30,3 +31,5 @@ while True: #游戏主循环
     screen.blit(mouse_crusor,(x,y)) #将光标画上去
 
     pygame.display.update() #刷新画面
+
+input()
