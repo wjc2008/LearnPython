@@ -1,13 +1,27 @@
-import pygame
-import sys
+import pymysql
 
-pygame.init()  # 初始化pygame
-size = width, height = 320, 240  # 设置窗口大小
-screen = pygame.display.set_mode(size)  # 显示窗口
+# 打开数据库连接
+# 注意password的密码是你刚刚设置的，port=3306是MySql默认的端口号
+db = pymysql.connect(host='localhost', user='root',
+                     password='123456', port=3306)
+print(db)
+# 使用cursor()方法获取操作游标
+cursor = db.cursor()
+print(cursor)
+# SQL 插入语句
+cursor.execute("CREATE DATABASE world DEFAULT CHARACTER SET UTF8MB4")
+# 创建一个Myfirsttest 的数据库
+sql = """INSERT INTO EMPLOYEE(FIRST_NAME,
+         LAST_NAME, AGE, SEX, INCOME)
+         VALUES ('Mac', 'Mohan', 20, 'M', 2000)"""
+try:
+    # 执行sql语句
+    cursor.execute(sql)
+    # 提交到数据库执行
+    db.commit()
+except:
+    # 如果发生错误则回滚
+    db.rollback()
 
-while True:  # 死循环确保窗口一直显示
-    for event in pygame.event.get():  # 遍历所有事件
-        if event.type == pygame.QUIT:  # 如果单击关闭窗口，则退出
-            sys.exit()
-
-pygame.quit()  # 退出pygame
+# 关闭数据库连接
+db.close()
