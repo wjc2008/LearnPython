@@ -85,7 +85,7 @@ import sys
 pygame.init()
 size = width,height =480,240
 screen = pygame.display.set_mode(size)
-color = (255,0,0)
+color = (255,255,0)
 ball = pygame.image.load('ball.png')
 ballrect = ball.get_rect()
 '''
